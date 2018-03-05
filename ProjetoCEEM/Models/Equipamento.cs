@@ -12,6 +12,6 @@ namespace ProjetoCEEM.Models
         public DateTime DataCadastro { get; set; }
         public int QuantPontoMax { get; set; }
         public virtual ICollection<PontoMedida> PontoMedida { get; set; }
-        public virtual ICollection<Usuario> Usuario { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }
