@@ -11,7 +11,7 @@ namespace ProjetoCEEM.Models
         public Boolean Verao { get; set; }
         public DateTime Inicio { get; set; }
         public DateTime Fim { get; set; }
-        public virtual ICollection<PontoMedida> PontoMedida { get; set; }
+        public virtual PontoMedida PontoMedida { get; set; }
         public virtual ICollection<DataHoraBandeiraTarifa> DataHoraBandeiraTarifa { get; set; }
     }
 }

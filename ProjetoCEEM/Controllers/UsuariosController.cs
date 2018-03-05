@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Services.Description;
 using ProjetoCEEM.Models;
 
 namespace ProjetoCEEM.Controllers
@@ -48,8 +49,12 @@ namespace ProjetoCEEM.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Nome,Login,Email,Senha,Status,DataCadastro,DataInativacao,DataInicioBloqueio,DataFimBloqueio")] Usuario usuario)
         {
-            if (ModelState.IsValid)
+            if (!usuario.EmailDisponivel()) 
+                ModelState.AddModelError("Email", @"Este email já está sendo usado");
+
+            if (ModelState.IsValid && usuario.EmailDisponivel())
             {
+                
                 db.Usuarios.Add(usuario);
                 db.SaveChanges();
                 return RedirectToAction("Index");

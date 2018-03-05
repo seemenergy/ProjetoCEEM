@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace ProjetoCEEM.Models
 {
@@ -15,7 +16,9 @@ namespace ProjetoCEEM.Models
         public string Login { get; set; }
         [Required]
         [EmailAddress]
+        [Index(IsUnique = true)]
         public string Email { get; set; }
+        [Required]
         public string Senha { get; set; }
         [EnumDataType(typeof(StatusEnum))]
         [Required]
@@ -26,13 +29,13 @@ namespace ProjetoCEEM.Models
         public DateTime DataCadastro { get; set; }
         [Column(TypeName = "Date")]
         [Display(Name = "Data de Inativação")]
-        public DateTime DataInativacao { get; set; }
+        public DateTime? DataInativacao { get; set; }
         [Column(TypeName = "DateTime")]
         [Display(Name = "Data de Bloqueio")]
-        public DateTime DataInicioBloqueio { get; set; }
+        public DateTime? DataInicioBloqueio { get; set; }
         [Column(TypeName = "DateTime")]
         [Display(Name = "Data de Desbloqueio")]
-        public DateTime DataFimBloqueio { get; set; }
+        public DateTime? DataFimBloqueio { get; set; }
         public virtual ICollection<Equipamento> Equipamento { get; set; }
         public virtual ICollection<Endereco> Endereco { get; set; }
         public virtual ICollection<Contato> Contato { get; set; }
@@ -41,6 +44,17 @@ namespace ProjetoCEEM.Models
             Ativo = 1,
             Inativo = 2,
             Bloqueado = 3
+        }
+
+        public bool EmailDisponivel()
+        {
+            using (var db = new Context())
+            {
+                if (db.Usuarios.Count(u => u.Email.Equals(Email)) > 0)
+                    
+                    return false;
+            }
+            return true;
         }
     }
 }
