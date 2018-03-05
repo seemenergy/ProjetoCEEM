@@ -14,6 +14,6 @@ namespace ProjetoCEEM.Models
         public double MedidaTensao { get; set; }
         public int EquipamentoId { get; set; }
         public int DataHoraBandeiraId { get; set; }
-        public virtual ICollection<DataHoraBandeira> DataHoraBandeira { get; set; }
+        public virtual DataHoraBandeira DataHoraBandeira { get; set; }
     }
 }
