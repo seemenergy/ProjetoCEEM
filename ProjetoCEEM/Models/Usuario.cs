@@ -13,6 +13,7 @@ namespace ProjetoCEEM.Models
         [Required]
         public string Nome { get; set; }
         [Required]
+        [Index(IsUnique = true)]
         public string Login { get; set; }
         [Required]
         [EmailAddress]
@@ -39,21 +40,18 @@ namespace ProjetoCEEM.Models
         public virtual ICollection<Equipamento> Equipamento { get; set; }
         public virtual ICollection<Endereco> Endereco { get; set; }
         public virtual ICollection<Contato> Contato { get; set; }
-        public enum StatusEnum
+
+        public bool EmailDisponivel(Context db)
         {
-            Ativo = 1,
-            Inativo = 2,
-            Bloqueado = 3
+            if (db.Usuarios.Count(u => u.Email.Equals(Email) && u.Id != Id) > 0)
+                return false;
+            return true;
         }
 
-        public bool EmailDisponivel()
+        public bool LoginDisponivel(Context db)
         {
-            using (var db = new Context())
-            {
-                if (db.Usuarios.Count(u => u.Email.Equals(Email)) > 0)
-                    
-                    return false;
-            }
+            if (db.Usuarios.Count(u => u.Login.Equals(Login) && u.Id != Id) > 0)
+                return false;
             return true;
         }
     }
