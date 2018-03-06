@@ -23,5 +23,9 @@ namespace ProjetoCEEM.Models
         }
 
         public System.Data.Entity.DbSet<ProjetoCEEM.Models.Usuario> Usuarios { get; set; }
+
+        public System.Data.Entity.DbSet<ProjetoCEEM.Models.Equipamento> Equipamentoes { get; set; }
+
+        public System.Data.Entity.DbSet<ProjetoCEEM.Models.PontoMedida> PontoMedidas { get; set; }
     }
 }

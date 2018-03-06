@@ -150,6 +150,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EquipamentosController.cs" />
+    <Compile Include="Controllers\PontoMedidasController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Migrations\201803050402528_InitialCreate.cs" />
     <Compile Include="Migrations\201803050402528_InitialCreate.Designer.cs">
@@ -217,6 +219,16 @@
     <Content Include="Views\Usuarios\Edit.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
     <Content Include="Views\Usuarios\Login.cshtml" />
+    <Content Include="Views\Equipamentos\Create.cshtml" />
+    <Content Include="Views\Equipamentos\Delete.cshtml" />
+    <Content Include="Views\Equipamentos\Details.cshtml" />
+    <Content Include="Views\Equipamentos\Edit.cshtml" />
+    <Content Include="Views\Equipamentos\Index.cshtml" />
+    <Content Include="Views\PontoMedidas\Create.cshtml" />
+    <Content Include="Views\PontoMedidas\Delete.cshtml" />
+    <Content Include="Views\PontoMedidas\Details.cshtml" />
+    <Content Include="Views\PontoMedidas\Edit.cshtml" />
+    <Content Include="Views\PontoMedidas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

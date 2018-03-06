@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace ProjetoCEEM.Models
 {
@@ -13,5 +14,13 @@ namespace ProjetoCEEM.Models
         public int QuantPontoMax { get; set; }
         public virtual ICollection<PontoMedida> PontoMedida { get; set; }
         public virtual Usuario Usuario { get; set; }
+
+        public bool PodeCadastrarPontos(Context db)
+        {
+            if (db.PontoMedidas.Count(p => p.EquipamentoId == Id) < QuantPontoMax)
+                return true;
+            return false;
+        }
+
     }
 }
