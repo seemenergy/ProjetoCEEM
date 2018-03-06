@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Services.Description;
 using ProjetoCEEM.Models;
+using ProjetoCEEM.ViewModels;
 
 namespace ProjetoCEEM.Controllers
 {
@@ -15,6 +16,27 @@ namespace ProjetoCEEM.Controllers
     {
         private Context db = new Context();
 
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login([Bind(Include = "Login,Senha")] UsuarioLogin usuarioLogin)
+        {
+            if (db.Usuarios.Count(u => u.Login.Equals(usuarioLogin.Login)) > 0)
+            {
+                if (db.Usuarios.Single(u => u.Login.Equals(usuarioLogin.Login)).Senha.Equals(usuarioLogin.Senha))
+                    ViewBag.Logado = String.Concat(usuarioLogin.Login, @" - Usuario Logado");
+                else
+                    ModelState.AddModelError("Senha", @"Senha incorreta");
+            }
+            else
+            {
+                ModelState.AddModelError("Login",@"Não foi encontrada uma conta com o usuario informado");
+            }
+            return View(usuarioLogin);
+        }
         // GET: Usuarios
         public ActionResult Index()
         {
@@ -49,12 +71,14 @@ namespace ProjetoCEEM.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Nome,Login,Email,Senha,Status,DataCadastro,DataInativacao,DataInicioBloqueio,DataFimBloqueio")] Usuario usuario)
         {
-            if (!usuario.EmailDisponivel()) 
+            if (!usuario.EmailDisponivel(db))
                 ModelState.AddModelError("Email", @"Este email já está sendo usado");
 
-            if (ModelState.IsValid && usuario.EmailDisponivel())
+            if (!usuario.LoginDisponivel(db))
+                ModelState.AddModelError("Login", @"Este Login já está sendo usado");
+
+            if (ModelState.IsValid && usuario.EmailDisponivel(db) && usuario.LoginDisponivel(db))
             {
-                
                 db.Usuarios.Add(usuario);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -85,6 +109,12 @@ namespace ProjetoCEEM.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Nome,Login,Email,Senha,Status,DataCadastro,DataInativacao,DataInicioBloqueio,DataFimBloqueio")] Usuario usuario)
         {
+            if (!usuario.EmailDisponivel(db))
+                ModelState.AddModelError("Email", @"Este email já está sendo usado");
+
+            if (!usuario.LoginDisponivel(db))
+                ModelState.AddModelError("Login", @"Este Login já está sendo usado");
+
             if (ModelState.IsValid)
             {
                 db.Entry(usuario).State = EntityState.Modified;

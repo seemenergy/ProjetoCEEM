@@ -168,9 +168,11 @@
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Equipamento.cs" />
     <Compile Include="Models\PontoMedida.cs" />
+    <Compile Include="Models\StatusEnum.cs" />
     <Compile Include="Models\TipoContato.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\UsuarioLogin.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -214,6 +216,7 @@
     <Content Include="Views\Usuarios\Details.cshtml" />
     <Content Include="Views\Usuarios\Edit.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Usuarios\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
