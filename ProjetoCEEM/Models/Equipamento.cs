@@ -15,12 +15,13 @@ namespace ProjetoCEEM.Models
         public virtual ICollection<PontoMedida> PontoMedida { get; set; }
         public virtual Usuario Usuario { get; set; }
 
-        public bool PodeCadastrarPontos(Context db)
+        public int QuantPontosDisponiveis(Context db)
         {
-            if (db.PontoMedidas.Count(p => p.EquipamentoId == Id) < QuantPontoMax)
-                return true;
-            return false;
+            return (QuantPontoMax - db.PontoMedidas.Count(p => p.EquipamentoId == Id));
         }
-
+        public int QuantPontos(Context db)
+        {
+            return db.PontoMedidas.Count(p => p.EquipamentoId == Id);
+        }
     }
 }

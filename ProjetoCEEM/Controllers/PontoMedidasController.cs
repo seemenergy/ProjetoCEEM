@@ -51,9 +51,9 @@ namespace ProjetoCEEM.Controllers
         public ActionResult Create([Bind(Include = "Id,Nome,DataMedida,MedidaCorrente,MedidaTensao,EquipamentoId")] PontoMedida pontoMedida)
         {
             pontoMedida.Equipamento = db.Equipamentoes.Find(pontoMedida.EquipamentoId);
-            if (!pontoMedida.Equipamento.PodeCadastrarPontos(db))
+            if (pontoMedida.Equipamento != null && pontoMedida.Equipamento.QuantPontosDisponiveis(db) < 1)
                 ViewBag.NaoPode = @"O equipamento possui o numero máximo de pontos de medida cadastrados";
-            if (ModelState.IsValid&&pontoMedida.Equipamento.PodeCadastrarPontos(db))
+            if (pontoMedida.Equipamento != null && (ModelState.IsValid && pontoMedida.Equipamento.QuantPontosDisponiveis(db) > 0))
             {
                 db.PontoMedidas.Add(pontoMedida);
                 db.SaveChanges();

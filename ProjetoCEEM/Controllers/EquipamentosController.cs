@@ -64,6 +64,7 @@ namespace ProjetoCEEM.Controllers
         // GET: Equipamentoes/Edit/5
         public ActionResult Edit(int? id)
         {
+            
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -84,7 +85,9 @@ namespace ProjetoCEEM.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,UsuarioId,DataCadastro,QuantPontoMax")] Equipamento equipamento)
         {
-            if (ModelState.IsValid)
+            if (equipamento != null && equipamento.QuantPontoMax - equipamento.QuantPontos(db) < 0)
+                ModelState.AddModelError("QuantPontoMax", @"O valor desejado é menor que a quantidade atual de pontos do equipamento");
+            if (equipamento != null && ModelState.IsValid && equipamento.QuantPontoMax - equipamento.QuantPontos(db) >= 0)
             {
                 db.Entry(equipamento).State = EntityState.Modified;
                 db.SaveChanges();

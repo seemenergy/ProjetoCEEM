@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjetoCEEM.Models
 {
@@ -9,6 +10,7 @@ namespace ProjetoCEEM.Models
         [Key]
         public int Id { get; set; }
         public string Nome { get; set; }
+        [DataType(DataType.DateTime)]
         public DateTime DataMedida { get; set; }
         public double MedidaCorrente { get; set; }
         public double MedidaTensao { get; set; }
