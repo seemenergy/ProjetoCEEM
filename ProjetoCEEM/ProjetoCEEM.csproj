@@ -150,16 +150,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\EquipamentosController.cs" />
-    <Compile Include="Controllers\PontoMedidasController.cs" />
-    <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Migrations\201803050402528_InitialCreate.cs" />
     <Compile Include="Migrations\201803050402528_InitialCreate.Designer.cs">
       <DependentUpon>201803050402528_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -179,8 +176,41 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="favicon.ico" />
+    <Content Include="css\animate_for_index.min.css" />
+    <Content Include="css\bootstrap-theme.css" />
+    <Content Include="css\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\bootstrap_for_index.min.css" />
+    <Content Include="css\custom.min.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\main_for_index.css" />
+    <Content Include="css\responsive_for_index.css" />
+    <Content Include="css\style_for_index.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="images\grupo_pessoas.png" />
+    <Content Include="images\hardware.png" />
+    <Content Include="images\ideia_2_homens.png" />
+    <Content Include="images\ideia_homem.png" />
+    <Content Include="images\Logo_vFinal_v2.png" />
+    <Content Include="images\sacada_genial.png" />
+    <Content Include="images\services\bg_services.png" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\bootstrap_for_index.min.js" />
+    <Content Include="js\datepicker\daterangepicker.js" />
+    <Content Include="js\html5shiv_for_index.js" />
+    <Content Include="js\jquery.isotope_for_index.min.js" />
+    <Content Include="js\jquery_for_index.min.js" />
+    <Content Include="js\main_for_index.js" />
+    <Content Include="js\moment\moment.min.js" />
+    <Content Include="js\npm.js" />
+    <Content Include="js\respond_for_index.min.js" />
+    <Content Include="js\stepBystep.js" />
+    <Content Include="js\wow_for_index.min.js" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
@@ -188,6 +218,20 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="css\bootstrap-theme.css.map" />
+    <Content Include="css\bootstrap-theme.min.css.map" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="css\bootstrap.min.css.map" />
+    <Content Include="css\font-awesome.css.map" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -210,37 +254,12 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Usuarios\Create.cshtml" />
-    <Content Include="Views\Usuarios\Delete.cshtml" />
-    <Content Include="Views\Usuarios\Details.cshtml" />
-    <Content Include="Views\Usuarios\Edit.cshtml" />
-    <Content Include="Views\Usuarios\Index.cshtml" />
-    <Content Include="Views\Usuarios\Login.cshtml" />
-    <Content Include="Views\Equipamentos\Create.cshtml" />
-    <Content Include="Views\Equipamentos\Delete.cshtml" />
-    <Content Include="Views\Equipamentos\Details.cshtml" />
-    <Content Include="Views\Equipamentos\Edit.cshtml" />
-    <Content Include="Views\Equipamentos\Index.cshtml" />
-    <Content Include="Views\PontoMedidas\Create.cshtml" />
-    <Content Include="Views\PontoMedidas\Delete.cshtml" />
-    <Content Include="Views\PontoMedidas\Details.cshtml" />
-    <Content Include="Views\PontoMedidas\Edit.cshtml" />
-    <Content Include="Views\PontoMedidas\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\RecuperarSenha.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -265,7 +284,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>58388</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

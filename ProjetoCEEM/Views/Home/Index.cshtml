@@ -1,31 +1,186 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿<body class="homepage">
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+    <header id="header" class="noselect">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#services"><img src="/images/Logo_vFinal_v2.png" alt="logo"></a>
+                </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+                <div class="collapse navbar-collapse navbar-left">
+                    <ul id="left-menu" class="nav navbar-nav">
+                        <li><a href="#sobre-sistema">Sistema</a></li>
+                        <li><a href="#hardware">Hardware</a></li>
+                        <li><a href="#identificacao">Quem somos</a></li>
+                        <li><a href="#assinante">Cadastro</a></li>
+                        <li><a href="#contact-info">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav importantBtn">
+                        <li class="active"><a id="important" href="/Home/Login">Login</a></li>
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+    </header><!--/header-->
+
+    <section id="services" class="service-item noselect" class="anchor">
+        <div class="container">
+            <div class="col-xs-12 foreground-content center">
+                <h1 class="animated-items">Consumo de Energia Elétrica Monitorado</h1>
+                <p class="animated-items lead">Torne simples o controle de seus gastos com o consumo de energia elétrica</p>
+                <a href=""><button type="button" class="btn btn-cadastro btn-pre-cadastrar animated-item-2">Pré-cadastrar</button></a>
+            </div>
+        </div> <!-- container -->
+    </section><!--/#services-->
+
+    <section id="sobre-sistema" class="anchor">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="media contact-info">
+                        <div class="media-body">
+                            <h2>Sobre o sistema</h2>
+                            <p>Devido aos impactos ambientais e seu alto custo, o mundo vem se preocupando com o consumo de energia elétrica e como diminuí-lo. O consumo de energia elétrica em São Paulo teve a maior retração dos últimos 14 anos em 2015, segundo dados da Secretaria Estadual de Energia e Mineração. Para o secretário, a adoção da cobrança extra nas contas de luz não só reduziu o consumo nas moradias paulistas como elevou a inadimplência nas contas de luz. Para ajudar no controle do consumo foi criado o Sistema de Consumo de Energia Elétrica Monitorado (CEEM). Este projeto desenvolve um sistema web que monitora o consumo de energia elétrica <span class="more">em KWh e prevê o quanto será gasto de acordo com o valor consumido, além de mostrar períodos e pontos com maior consumo e a média de gasto em determinado período. O usuário pode monitorar o consumo e criar relatórios com filtros específicos (como data e hora, bandeiras tarifárias sobre determinado período, etc). Todos que possuem uma rede elétrica podem adquirir o sistema<span class="trash-history">, porém o foco está nas grandes empresas, pois elas consomem mais que uma residência comum.</span>  O sistema pode monitorar o consumo e, consequentemente, ajudar na economia do mesmo para o usuário. Consequentemente custos, situações de risco e impactos ambientais serão reduzidos também.</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 icone">
+                    <div id="sacada-genial" class="centralizar">
+                        <img src="images/sacada_genial.png" alt="Sacada genial">
+                    </div>
+                </div>
+            </div>
+        </div><!--/.container-->
+    </section><!--/#sobre-sistema-->
+
+    <section id="hardware" class="anchor">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 pull-right">
+                    <div class="media contact-info">
+                        <div class="media-body">
+                            <h2>Hardware utilizado</h2>
+                            <p>O equipamento do Sistema é instalado em uma parte da rede de energia elétrica do contratante e fará a leitura sobre aquela área que ele se encontra ou do total do estabelecimento, se instalado em um lugar onde isso é possível. Os dados são salvos em um cartão de memória micro SD e posteriormente, caso haja uma queda de internet, enviados a um servidor com banco de dados, onde ocorre a seleção de dados, de acordo com o usuário, e são realizados os cálculos parametrizados.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.container-->
+    </section><!--/#hardware-->
+
+    <section id="identificacao" class="anchor">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="media contact-info">
+                        <div id="icone-identificacao" class="media-body">
+                            <h2>Quem somos</h2>
+                            <p>Alunos da FATEC de Guaratinguetá (SP), cursando Análise e Desenvolvimento de Sistemas (ADS). Após receberem a proposta de fazer um Projeto Interdisciplinar, o qual viria a ser o Trabalho de Conclusão de Curso (TCC), analisaram ideias, projetos similares, situação social e econômica do país, possíveis gastos e conhecimento necessários para um novo projeto. O grupo é formado por um Gerente de Projeto, Desenvolvedores e Analistas de Banco de Dados, entre outras funções.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 icone">
+                    <div id="quem-somos" class="centralizar">
+                        <img src="images/grupo_pessoas.png" alt="Um grupo">
+                    </div>
+                </div>
+            </div>
+        </div><!--/.container-->
+    </section><!--/#identificacao-->
+    <!--/#assinante-->
+    <section id="assinante" class="anchor">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="media contact-info">
+                        <div class="media-body">
+                            <h2>Gostou? Quer se tornar um assinante? Saiba como.</h2>
+                            <p>Basta clicar no botão para se cadastrar.</p>
+                            <p>Após o cadastro encaminharemos um e-mail a você para confirmação dos dados.</p>
+                            <a href=""><button type="button" class="btn btn-cadastro">Pré-cadastrar</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.container-->
+    </section>
+    <!--/#assinante-->
+    <!--/#contact-info-->
+    <section id="contact-info" class="anchor">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="media contact-info">
+                        <div class="media-body centralizar">
+                            <h2>Tem alguma pergunta?<br />Precisa de mais informações?</h2>
+                            <p>Você pode entrar em contato conosco através de nosso e-mail,<br /> telefone, ou, ainda, atráves de uma de nossas contas no Facebook e no Twitter.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.container-->
+    </section>
+    <!--/#contact-info-->
+
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div id="contato" class="row center">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                    <a href="#">
+                        <span class="social"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                        <span class="social-content"><span>ceem@support.com.br</span></span>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                    <a href="#">
+                        <span class="social"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                        <span class="social-content"><span>+55 (12) 2344-2323</span></span>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                    <div class="contact-container">
+                        <a target="_blank" href="https://www.facebook.com/consumonitorado/">
+                            <span class="social"><i class="fa fa-facebook" aria-hidden="true"></i></span>
+                            <span class="social-content"><span>consumonitorado</span></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                    <a href="#">
+                        <span class="social"><i class="fa fa-twitter" aria-hidden="true"></i></span>
+                        <span class="social-content"><span>consumonitorado</span></span>
+                    </a>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="col-sm-12">
+                    <div class="pipe-separated-list-container">
+                        <ul>
+                            <li><a href="#services">Home</a></li>
+                            <li><a href="#sobre-sistema">Sistema </a></li>
+                            <li><a href="#hardware">Hardware</a></li>
+                            <li><a href="#identificacao">Quem somos</a></li>
+                            <li><a href="#assinante">Cadastro</a></li>
+                            <li><a href="#contact-info">Contatos</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="/../../js/jquery_for_index.min.js"></script>
+    <script src="/../../js/bootstrap_for_index.min.js"></script>
+    <script src="/../../js/jquery.isotope_for_index.min.js"></script>
+    <script src="/../../js/main_for_index.js"></script>
+    <script src="/../../js/wow_for_index.min.js"></script>
+</body>

@@ -8,22 +8,17 @@ namespace ProjetoCEEM.Controllers
 {
     public class HomeController : Controller
     {
+        // GET: Home
         public ActionResult Index()
         {
             return View();
         }
-
-        public ActionResult About()
+        public ActionResult Login()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
-
-        public ActionResult Contact()
+        public ActionResult RecuperarSenha()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }
